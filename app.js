@@ -166,3 +166,6 @@
       operators = [];
     });
 })();
+
+/* Road Day open: respect reduced motion */
+(function(){var v=document.querySelector('.rdx__media video');if(v&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.setAttribute('controls','')}})();

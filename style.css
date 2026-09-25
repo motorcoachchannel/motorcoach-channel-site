@@ -303,3 +303,45 @@ section[id] { scroll-margin-top: 5rem; }
   .mosaic > * { grid-column: span 1 !important; }
   .tile { min-height: 14rem; }
 }
+
+/* ---------- Road Day (flagship show, carries its own brand) ---------- */
+@font-face{font-family:'RD Cond';src:url('./assets/road-day/BarlowCondensed-Black.ttf') format('truetype');font-weight:900;font-display:swap}
+@font-face{font-family:'RD Cond';src:url('./assets/road-day/BarlowCondensed-SemiBold.ttf') format('truetype');font-weight:600;font-display:swap}
+.rdx{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+.rdx__card{--rd-a:#0B0C0E;--rd-n:#15171B;--rd-y:#FFC20E;--rd-c:#F3F0E8;--rd-m:#9A9CA0;background:var(--rd-a);color:var(--rd-c);border:1px solid #2A2D33;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.rdx__grid{display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch}
+.rdx__copy{padding:clamp(var(--space-8),4vw,var(--space-16))}
+.rdx__eyebrow{display:flex;align-items:center;gap:var(--space-3);font:600 15px/1 'RD Cond',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--rd-y)}
+.rdx__live{width:9px;height:9px;border-radius:50%;background:#E0342B;box-shadow:0 0 0 4px rgba(224,52,43,.22);animation:rdxPulse 2s ease-in-out infinite}
+@keyframes rdxPulse{50%{box-shadow:0 0 0 7px rgba(224,52,43,0)}}
+.rdx__logo{margin:var(--space-6) 0 var(--space-4);line-height:0}
+.rdx__logo img{width:min(400px,100%);height:auto}
+.rdx__tag{font:900 clamp(24px,2.4vw,34px)/1.02 'RD Cond',sans-serif;text-transform:uppercase;transform:skewX(-8deg);transform-origin:left;color:var(--rd-c)}
+.rdx__tag em{font-style:normal;color:var(--rd-y)}
+.rdx__p{margin-top:var(--space-5);max-width:48ch;font-size:var(--text-sm);line-height:1.65;color:#C9C6BF}
+.rdx__btns{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}
+.rdx__btn{display:inline-block;padding:14px 24px;font:600 15px/1 'RD Cond',sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.rdx__btn--y{background:var(--rd-y);color:var(--rd-a)}
+.rdx__btn--y:hover{background:#FFD24D}
+.rdx__btn--o{border-color:#4a4d54;color:var(--rd-c)}
+.rdx__btn--o:hover{border-color:var(--rd-y);color:var(--rd-y)}
+.rdx__btn:focus-visible,.rdx__more:focus-visible{outline:2px solid var(--rd-y);outline-offset:3px}
+.rdx__media{position:relative;min-height:340px;background:#000;border-left:1px solid #2A2D33}
+.rdx__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rdx__badge{position:absolute;left:var(--space-4);bottom:var(--space-4);padding:6px 10px;background:rgba(11,12,14,.8);font:600 13px/1 'RD Cond',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--rd-c)}
+.rdx__stops{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-5) var(--space-8);padding:var(--space-6) clamp(var(--space-8),4vw,var(--space-16));background:var(--rd-n);border-top:2px solid var(--rd-y)}
+.rdx__stops-h{font:900 20px/1 'RD Cond',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--rd-y);transform:skewX(-8deg)}
+.rdx__stops ol{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4) var(--space-6);list-style:none;padding:0}
+.rdx__stops li{display:flex;flex-direction:column;gap:3px;padding-left:var(--space-3);border-left:2px solid var(--rd-y)}
+.rdx__stops b{font:600 16px/1.1 'RD Cond',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--rd-c)}
+.rdx__stops span{font-size:13px;line-height:1.4;color:var(--rd-m)}
+.rdx__more{font:600 15px/1 'RD Cond',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--rd-y);text-decoration:none;white-space:nowrap}
+.rdx__more:hover{color:#fff}
+@media (max-width:900px){
+  .rdx__grid{grid-template-columns:1fr}
+  .rdx__media{order:-1;min-height:0;aspect-ratio:16/9;border-left:0;border-bottom:1px solid #2A2D33}
+  .rdx__stops{grid-template-columns:1fr}
+  .rdx__stops ol{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){.rdx__stops ol{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.rdx__live{animation:none}}
