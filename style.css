@@ -326,9 +326,10 @@ section[id] { scroll-margin-top: 5rem; }
 .rdx__btn--o{border-color:#4a4d54;color:var(--rd-c)}
 .rdx__btn--o:hover{border-color:var(--rd-y);color:var(--rd-y)}
 .rdx__btn:focus-visible,.rdx__more:focus-visible{outline:2px solid var(--rd-y);outline-offset:3px}
-.rdx__media{position:relative;min-height:340px;background:#000;border-left:1px solid #2A2D33}
-.rdx__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.rdx__badge{position:absolute;left:var(--space-4);bottom:var(--space-4);padding:6px 10px;background:rgba(11,12,14,.8);font:600 13px/1 'RD Cond',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--rd-c)}
+.rdx__media{display:flex;flex-direction:column;justify-content:center;gap:var(--space-3);padding:clamp(var(--space-6),3vw,var(--space-12));background:#000;border-left:1px solid #2A2D33}
+.rdx__frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000;border:1px solid #2A2D33}
+.rdx__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.rdx__badge{align-self:flex-start;font:600 13px/1 'RD Cond',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--rd-m)}
 .rdx__stops{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-5) var(--space-8);padding:var(--space-6) clamp(var(--space-8),4vw,var(--space-16));background:var(--rd-n);border-top:2px solid var(--rd-y)}
 .rdx__stops-h{font:900 20px/1 'RD Cond',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--rd-y);transform:skewX(-8deg)}
 .rdx__stops ol{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4) var(--space-6);list-style:none;padding:0}
@@ -339,7 +340,7 @@ section[id] { scroll-margin-top: 5rem; }
 .rdx__more:hover{color:#fff}
 @media (max-width:900px){
   .rdx__grid{grid-template-columns:1fr}
-  .rdx__media{order:-1;min-height:0;aspect-ratio:16/9;border-left:0;border-bottom:1px solid #2A2D33}
+  .rdx__media{order:-1;padding:0;border-left:0;border-bottom:1px solid #2A2D33}.rdx__frame{border:0}.rdx__badge{display:none}
   .rdx__stops{grid-template-columns:1fr}
   .rdx__stops ol{grid-template-columns:1fr 1fr}
 }
